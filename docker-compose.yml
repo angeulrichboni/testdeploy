@@ -1,0 +1,11 @@
+#version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: testdeploy
+    command: ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+    volumes:
+      - .:/app
+    ports:
+      - "9880:8000"
