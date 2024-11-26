@@ -12,9 +12,9 @@ from django.shortcuts import get_object_or_404
 from rest_framework.permissions import IsAuthenticated
 from accounts.serializers import CurrentUserPostsSerializer
 
-# class PostViewset(viewsets.ModelViewSet):
-#     queryset=Post.objects.all()
-#     serializer_class = PostSerializer
+class PostViewset(viewsets.ModelViewSet):
+    queryset=Post.objects.all()
+    serializer_class = PostSerializer
 
 class PostListCreateView(generics.GenericAPIView, mixins.ListModelMixin, mixins.CreateModelMixin):
     queryset = Post.objects.all()
